@@ -25,7 +25,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   late SearchCubit cubit;
   @override
   void initState() {
-    cubit=SearchCubit.get(context);
+    cubit = SearchCubit.get(context);
     super.initState();
   }
 

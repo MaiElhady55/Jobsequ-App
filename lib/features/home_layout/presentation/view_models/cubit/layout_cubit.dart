@@ -20,7 +20,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     MessagesScreen(),
     AppliedJobScreen(),
     SavedJobScreen(), //SavedJobEmptyScreen
-    CompleteProfileScreen(),
+    ProfileScreen(),
   ];
 
   void getCompleteProfile() {

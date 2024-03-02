@@ -103,7 +103,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                     color: AppTheme.neutral5,
                   ));
             } else {
-              return const Center(child: CircularProgressIndicator());
+              return const Center(child: Text(''));
             }
           },
         ),
