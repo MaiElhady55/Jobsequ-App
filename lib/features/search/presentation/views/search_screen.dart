@@ -51,32 +51,36 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ),
       ),
-      body: SingleChildScrollView(child:
-          BlocBuilder<SearchCubit, SearchState>(builder: (context, state) {
-        return BuildCondition(
-            condition: cubit.isSearching,
-            builder: (context) => SearchScreenResult(),
-            fallback: (context) => Column(
-                  children: [
-                    const CustomHeader('Recent searches'),
-                    ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: cubit.recentSearches.length,
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => SearchResultTile(
-                            cubit.recentSearches[index], SearchType.recent)),
-                    const CustomHeader('Popular searches'),
-                    ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: cubit.popularSearches.length,
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => SearchResultTile(
-                            cubit.popularSearches[index], SearchType.popular)),
-                  ],
-                ));
-      })),
+      body: SingleChildScrollView(
+        child: BlocBuilder<SearchCubit, SearchState>(
+          builder: (context, state) {
+            return BuildCondition(
+              condition: cubit.isSearching,
+              builder: (context) => SearchScreenResult(),
+              fallback: (context) => Column(
+                children: [
+                  const CustomHeader('Recent searches'),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: cubit.recentSearches.length,
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) => SearchResultTile(
+                          cubit.recentSearches[index], SearchType.recent)),
+                  const CustomHeader('Popular searches'),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: cubit.popularSearches.length,
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) => SearchResultTile(
+                          cubit.popularSearches[index], SearchType.popular)),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:jobsque/core/constance/enums.dart';
 import 'package:jobsque/core/network/local/cache_helper.dart';
+import 'package:jobsque/core/network/remote/dio_interseptor.dart';
 import 'package:jobsque/core/network/remote/endpoints.dart';
 
 class DioHelper {
@@ -11,6 +12,9 @@ class DioHelper {
         baseUrl: baseUrl,
         receiveDataWhenStatusError: true,
       ),
+    );
+    dio.interceptors.add(
+      MyDioInterceptor(),
     );
   }
 

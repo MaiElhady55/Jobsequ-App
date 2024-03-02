@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobsque/core/constance/constance.dart';
 import 'package:jobsque/core/network/remote/dio_helper.dart';
 import 'package:jobsque/core/network/remote/endpoints.dart';
 import 'package:jobsque/core/utils/app_colors.dart';
@@ -33,7 +34,6 @@ class SearchCubit extends Cubit<SearchState> {
 
   bool isSearching = false;
   late String searchKey;
-
   void searchTextChanged(String text) {
     searchKey = text;
     if (text.isEmpty) {
@@ -49,8 +49,10 @@ class SearchCubit extends Cubit<SearchState> {
     searchTextChanged(name);
     emit(SearchLoading());
 
-    DioHelper.postData(endPoint: searchJobUrl, data: {'name': name})
-        .then((value) {
+    DioHelper.postData(
+        endPoint: searchJobUrl,
+        token: token,
+        data: {'name': name}).then((value) {
       for (var job in value.data['data']) {
         foundResults.add(JobData.fromJson(job));
       }
@@ -66,6 +68,7 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   String? selectedValue;
+
   changeSelectedSalary(String? value) {
     selectedValue = value;
     emit(ChangeSalaryFilter());
@@ -101,15 +104,19 @@ class SearchCubit extends Cubit<SearchState> {
   fetchDataWithFilters({
     String? location,
     String? salary,
+
   }) {
     foundResults.clear();
+
     emit(SearchLoading());
     DioHelper.postData(
       endPoint: searchJobUrl,
+      token: token,
       data: {
         'name': searchKey,
         'location': location,
         'salary': selectedValue,
+
       },
     ).then((value) {
       print(value.data);
@@ -127,13 +134,14 @@ class SearchCubit extends Cubit<SearchState> {
     });
   }
 
-   List<String> jobTypeFilter=[];
-   
-  void addItem(String work){
+  List<String> jobTypeFilter = [];
+
+  void addItem(String work) {
     jobTypeFilter.add(work);
     emit(ChangeJobTypeColor());
   }
-  void deleteItem(String work){
+
+  void deleteItem(String work) {
     jobTypeFilter.remove(work);
     emit(ChangeJobTypeColor());
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:jobsque/core/utils/app_colors.dart';
 import 'package:jobsque/core/utils/styles.dart';
+import 'package:jobsque/features/search/presentation/view_models/cubit/search_cubit.dart';
 
 class CustomSearchBar extends StatefulWidget {
   final TextEditingController controller;
@@ -21,6 +22,13 @@ class CustomSearchBar extends StatefulWidget {
 }
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
+  late SearchCubit cubit;
+  @override
+  void initState() {
+    cubit=SearchCubit.get(context);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,7 +38,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         controller: widget.controller,
         keyboardType: widget.keyboardType,
         onChanged: (value) {
-          //cubit.searchJob(name: value);
+          cubit.searchJob(name: value);
         },
         decoration: InputDecoration(
           prefixIcon: const Icon(Iconsax.search_normal),
