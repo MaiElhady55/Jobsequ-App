@@ -1,6 +1,8 @@
 # Jobsque: 🚀 A Flutter Job Finder App 🔍
 Jobsque is a mobile application developed using Flutter that helps users find and apply for jobs. 💼 It utilizes API integration with Dio for retrieving job data 📊 and SharedPreferences as a local database for storing user preferences 💾 and application state ⚙️.
 
+![Screenshot 2023-07-30 142309](https://github.com/AbuMuftee/Find-Job/assets/84699634/6e64e25a-97da-44d9-8f8f-d5b0b9770857)
+
 ## Video URL
 [Google Drive](https://drive.google.com/file/d/1JYJvzkXJ0JPMQdeDSKRX3ZITKWZ_SiF7/view?usp=drive_link)
 
@@ -83,7 +85,7 @@ flutter run
 
 ## Screenshots
 
-  Splash Screen                 |     Home Screen          |    Setting Screen     | Azkar Screen 
+  Splash Screen                 |     OnBoarding Screen1          |    OnBoarding Screen2     | OnBoarding Screen3 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![Screenshot_20240302_225407_com example jobsque_app](https://github.com/MaiElhady55/Jobsequ-App/assets/122188401/a71cacd9-4650-4628-936d-e0a4cd7c57c8)|![Screenshot_20230724_024325_com example muslim_app_2](https://github.com/MaiElhady55/Muslim-App/assets/122188401/db85537e-b94c-4993-b2d6-ad3d1b121bc0)|![Screenshot_20230724_024352_com example muslim_app_2](https://github.com/MaiElhady55/Muslim-App/assets/122188401/2b1d8639-c292-42c1-8486-442a2f178158)|![Screenshot_20230724_024418_com example muslim_app_2](https://github.com/MaiElhady55/Muslim-App/assets/122188401/c74da517-21b5-4504-bae4-2757018277d5)
   Azkar Details Screen                 |     Strories Screen          |    Strories Details Screen     | Quran Screen 
