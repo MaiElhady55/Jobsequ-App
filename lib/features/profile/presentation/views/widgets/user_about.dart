@@ -31,33 +31,33 @@ class _UserAboutState extends State<UserAbout> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'About',
-              style: Styles.textStyle13.copyWith(color: AppTheme.neutral5,)
-            ),
+            Text('About',
+                style: Styles.textStyle13.copyWith(
+                  color: AppTheme.neutral5,
+                )),
             TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoute.editDetailsScreen);
                 },
-                child: Text(
-                  'Edit',
-                  style:Styles.textStyle11.copyWith(color: AppTheme.primary5,)
-                ))
+                child: Text('Edit',
+                    style: Styles.textStyle11.copyWith(
+                      color: AppTheme.primary5,
+                    )))
           ],
         ),
         SizedBox(height: 0.5.h),
         BlocBuilder<ProfileCubit, ProfileState>(
           builder: (context, state) {
-            if(cubit.profileDetails.isNotEmpty){
+            if (cubit.profileDetails.isNotEmpty) {
+              return Text(cubit.profileDetails[0].bio ?? 'add your Boi',
+                  style: Styles.textStyle11.copyWith(
+                    color: AppTheme.neutral5,
+                  ));
+            } else {
               return Text(
-                cubit.profileDetails[0].bio??'add your Boi',
-                style: Styles.textStyle11.copyWith(color: AppTheme.neutral5,)
+                ' ',
               );
             }
-            else {
-              return const Center(child: CircularProgressIndicator());
-            }
-
           },
         ),
       ],
