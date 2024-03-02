@@ -1,6 +1,9 @@
 # Jobsque: 🚀 A Flutter Job Finder App 🔍
 Jobsque is a mobile application developed using Flutter that helps users find and apply for jobs. 💼 It utilizes API integration with Dio for retrieving job data 📊 and SharedPreferences as a local database for storing user preferences 💾 and application state ⚙️.
 
+## Video URL
+[Google Drive](https://drive.google.com/file/d/1JYJvzkXJ0JPMQdeDSKRX3ZITKWZ_SiF7/view?usp=drive_link)
+
 ## Features 🌟
 Jobsque offers a comprehensive set of features to streamline the job search process: 🏃‍♀️🏃‍♂️
 
@@ -78,7 +81,6 @@ Bash
 flutter run
 ```
 
-## Video URL
-[Google Drive](https://drive.google.com/file/d/1JYJvzkXJ0JPMQdeDSKRX3ZITKWZ_SiF7/view?usp=drive_link)
+
 
 
